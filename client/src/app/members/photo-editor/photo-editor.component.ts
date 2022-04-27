@@ -6,7 +6,7 @@ import { AccountService } from 'src/app/_services/account.service';
 import { User } from 'src/app/_models/user';
 import { take } from 'rxjs/operators';
 import { Photo } from 'src/app/_models/photo';
-import { MemberService } from 'src/app/_services/member.service';
+import { MembersService } from 'src/app/_services/member.service';
 
 @Component({
   selector: 'app-photo-editor',
@@ -20,7 +20,7 @@ export class PhotoEditorComponent implements OnInit {
   baseUrl = environment.apiUrl;
   user: User;
 
-  constructor(private accountService: AccountService, private memberService: MemberService) { 
+  constructor(private accountService: AccountService, private memberService: MembersService) { 
     this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
   }
 

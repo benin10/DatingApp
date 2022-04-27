@@ -5,7 +5,7 @@ import { take } from 'rxjs/operators';
 import { Member } from 'src/app/_models/member';
 import { User } from 'src/app/_models/user';
 import { AccountService } from 'src/app/_services/account.service';
-import { MemberService } from 'src/app/_services/member.service';
+import { MembersService } from 'src/app/_services/member.service';
 
 @Component({
   selector: 'app-member-edit',
@@ -21,7 +21,7 @@ user:User;
   $event.returnValue =true;
 }
 
-  constructor(private accountService: AccountService, private memeberService: MemberService,
+  constructor(private accountService: AccountService, private memeberService: MembersService,
      private toastrService: ToastrService) { }
 
   ngOnInit(): void {
